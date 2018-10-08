@@ -29,8 +29,7 @@ train_data<-road[train_indv,]
 test_data<-road[-train_indv,]
 train_data$police_officer<-as.factor(train_data$police_officer)
 test_data$police_officer<-as.factor(test_data$police_officer)
-#write.csv(train_data,file="train_data.csv")
-#write.csv(test_data, file="test_data.csv")
+
 
 ####adaboost
 
@@ -271,7 +270,7 @@ bagperf = performance(bagpred, "tpr", "fpr")
 plot(bagperf)
 plot(bagperf, col=2, add=TRUE)
 plot(perf, col=1, add=TRUE)
-legend(0.6, 0.6, c(‘ctree’, ‘bagging’), 1:2)
+legend(0.6, 0.6, c(Â‘ctreeÂ’, Â‘baggingÂ’), 1:2)
 auc.curve = performance(bagpred, "auc")
 auc.curve <- auc.curve@y.values[[1]]
 auc.curve
